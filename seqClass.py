@@ -29,3 +29,4 @@ if args.motif:
         print("FOUND motif2")
     else:
         print("NOT FOUND")
+#now we are  able to classify rna and dna correctly

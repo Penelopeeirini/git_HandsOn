@@ -48,3 +48,11 @@ print("Nucleotide percentages:")
 for nucleotide, percentage in percentages.items():
   print(f"{nucleotide}: {percentage:.2f}%")
 
+# Add an argument to output the raw count of each nucleotide
+parser.add_argument("-c", "--counts", action="store_true", help="Output the raw count of each nucleotide")
+
+# If the --counts argument is passed, output the raw counts
+if args.counts:
+    print("Nucleotide counts:")
+    for nucleotide, count in counts.items():
+        print(f"{nucleotide}: {count}")

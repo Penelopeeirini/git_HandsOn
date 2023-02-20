@@ -8,6 +8,8 @@ from collections import Counter
 parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
 parser.add_argument("-m", "--motif", type = str, required = False, help = "Motif")
+# Add an argument to output the raw count of each nucleotide
+parser.add_argument("-c", "--counts", action="store_true", help="Output the raw count of each nucleotide")
 #parser.add_argument("-n", "--nucleotide", action= store_true, help = "Print nucleotide percentage") 
 if len(sys.argv) == 1:
     parser.print_help()
@@ -48,8 +50,6 @@ print("Nucleotide percentages:")
 for nucleotide, percentage in percentages.items():
   print(f"{nucleotide}: {percentage:.2f}%")
 
-# Add an argument to output the raw count of each nucleotide
-parser.add_argument("-c", "--counts", action="store_true", help="Output the raw count of each nucleotide")
 
 # If the --counts argument is passed, output the raw counts
 if args.counts:
